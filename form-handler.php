@@ -18,7 +18,7 @@ if (empty($result)) {
 		$result = $db->query($sql);
 }
 // Set your email below
-$myemail = "ENTER_YOUR_EMAIL_HERE"; // Replace with your email
+$myemail = "ksutton@wlapcs.org"; // Replace with your email
 
 // Receive and sanitize input
 $name = mysqli_real_escape_string($db, $_POST['name']);
@@ -31,7 +31,7 @@ $sql = "INSERT INTO form_submissions (name,phone,email,message) VALUES ('$name',
 $result = $db->query($sql);
 
 // set up email
-$msg = "New contact form submission!\nName: " . $name . "\nEmail: " . $email . "\nPhone: " . $phone . "\nEmail: " . $email;
+$msg = "My name is " . $name . "my email is " . $email . "if want to talk personally here's my phone number" . $phone . "\nEmail: " . $email;
 $msg = wordwrap($msg,70);
 mail($myemail,"New Form Submission",$msg);
 mail($email,"Thank you for your form submission",$msg);
